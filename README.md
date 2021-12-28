@@ -9,3 +9,9 @@ jwt를 통한 인증, 인가처리를 하는 서버 로직 구현
 
 
 2021.12.28 - jwt sign / vefiy function 추가 https://github.com/homeswiz/express-jwt/projects/1#card-75332003
+
+2021.12.29 - (예정) jwt function test 로직 추가
+
+2021.12.30 - (예정) jwt error handling 추가
+
+2021.12.31 - (예정) jwt error handling test 로직 추가
