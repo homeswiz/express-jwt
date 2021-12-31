@@ -12,10 +12,10 @@ jwt를 통한 인증, 인가처리를 하는 서버 로직 구현
 
 2021.12.29 - jwt function test base 추가, 앞으로의 테스트는 api를 기준으로 하기로 결정
 
-2021.12.30 - (예정) POST /login시, jwt.sign function test 코드 추가, middlware jwt.verify function test 코드 추가
+2021.12.30 - api 테스트 전 server 3 layer architecture 
 
-2021.12.31 - (예정) jwt error handling 추가
+(예정) POST /login시, jwt.sign function test 코드 추가, middlware jwt.verify function test 코드 추가
 
-2021.01.01 - (예정) jwt error handling test 로직 추가
+(예정) jwt error handling 추가
 
-2021.01.02 - (예정) 
+(예정) jwt error handling test 로직 추가
