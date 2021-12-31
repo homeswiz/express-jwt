@@ -6,7 +6,7 @@ class UserService {
     
         // request create user record to user.model.js
 
-        return 
+        return "hi"
     }
 }
 
