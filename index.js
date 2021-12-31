@@ -6,5 +6,5 @@ const userRouter = require("./routes/user");
 app.use("/user", userRouter);
 
 app.listen(PORT, function (){
-  console.log(`app listening at PORT :${PORT}`);
+  console.log(`app listening at PORT : ${PORT}`);
 });
