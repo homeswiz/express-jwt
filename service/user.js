@@ -1,7 +1,14 @@
-const express = require("express");
-const router = express.Router();
+class UserService {
 
-router.get("/signUp", async (req, res, next) => {
-});
+    constructor() {}
 
-module.exports = router;
+    async SignUp(user) {
+    
+        // request create user record to user.model.js
+
+        return 
+    }
+}
+
+
+module.exports = { UserService };
