@@ -8,4 +8,5 @@ module.exports = {
   DB_DATABASE : process.env.DB_DATABASE,
   DB_USER : process.env.DB_USER,
   DB_PASSWORD : process.env.DB_PASSWORD,
+  JWT_PRIVATE_KEY : process.env.JWT_PRIVATE_KEY,
 }
