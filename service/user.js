@@ -1,3 +1,4 @@
+const jwt = require("jsonwebtoken");
 const db = require("../models");
 const UserModel = db.User;
 
@@ -17,7 +18,13 @@ class UserService {
                 password: user.password
             }
         })
-        return user;
+
+        let token;
+        if(user) [
+            jwt.sign({ id: user.id }, )
+        ]
+
+        return token;
     }
 }
 
