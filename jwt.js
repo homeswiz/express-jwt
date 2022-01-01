@@ -1,14 +1,14 @@
 const jwt = require("jsonwebtoken");
-const JwtScretKey = process.env.Jwt_Secret_Key;
+const { JWT_PRIVATE_KEY } = require("./config");
 
 const createJwtToken = (info) => {
-  return jwt.sign(info, JwtScretKey, {
+  return jwt.sign(info, JWT_PRIVATE_KEY, {
     expiresIn: "1d"
   })
 }
 
 const validateJwtToken = (token) => {
-  return jwt.verify(token, JwtScretKey)
+  return jwt.verify(token, JWT_PRIVATE_KEY)
 }
 
 module.exports = {
