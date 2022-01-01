@@ -9,6 +9,16 @@ class UserService {
         await UserModel.create(user);
         return true;
     }
+
+    async Login(user) {
+        const user = await UserModel.findOne({
+            where: {
+                email: user.email,
+                password: user.password
+            }
+        })
+        return user;
+    }
 }
 
 
