@@ -16,6 +16,6 @@ jwt를 통한 인증, 인가처리를 하는 서버 로직 구현
 
 2021.12.31 - architecture 적용
 
-2021.01.01 - user models Sequelize 적용, SingUp API 추가
+2021.01.01 - user models Sequelize 적용, SingUp & Login API 추가
 
 (예정) test 코드 추가 - POST /user/signUp, POST /user/login
