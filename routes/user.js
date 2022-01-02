@@ -10,7 +10,7 @@ router.post("/signUp", async (req, res, next) => {
 
         res.send(true)
     } catch (error) {
-        console.error(error);
+        next(error);
     }
 });
 
@@ -20,7 +20,7 @@ router.post("/login", async (req, res, next) => {
         const result = await new UserService().Login(userDto);
         res.send(result);
     } catch (error) {
-        console.error(error);
+        next(error);
     }
 })
 
