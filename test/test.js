@@ -27,4 +27,17 @@ describe("API Test", () => {
 		})
 	})
 
+	describe("POST /user/login", () => {
+		it("should return true(success)", (done) => {
+			request(server)
+				.post("/user/login")
+				.send({
+					email: "test@gmail.com",
+					password: "12341234"
+				})
+				.expect(200)
+				.end(done);
+		})
+	})
+
 })
