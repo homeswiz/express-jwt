@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const { JWT_PRIVATE_KEY } = require("../config");
 const db = require("../models");
 const UserModel = db.User;
 
@@ -11,17 +12,17 @@ class UserService {
         return true;
     }
 
-    async Login(user) {
+    async Login(userDto) {
         const user = await UserModel.findOne({
             where: {
-                email: user.email,
-                password: user.password
+                email: userDto.email,
+                password: userDto.password
             }
         })
 
         let token;
         if(user) [
-            jwt.sign({ id: user.id }, )
+            jwt.sign({ id: user.id }, JWT_PRIVATE_KEY)
         ]
 
         return { token };
