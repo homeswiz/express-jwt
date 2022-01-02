@@ -6,7 +6,7 @@ router.post("/signUp", async (req, res, next) => {
     try {
         const userDto = req.body;
         const result = await new UserService().SignUp(userDto);
-        res.send(result)
+        res.json(result);
     } catch (error) {
         next(error);
     }
@@ -16,7 +16,7 @@ router.post("/login", async (req, res, next) => {
     try {
         const userDto = req.body;
         const result = await new UserService().Login(userDto);
-        res.send(result);
+        res.json(result);
     } catch (error) {
         next(error);
     }
