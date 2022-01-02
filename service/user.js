@@ -24,7 +24,7 @@ class UserService {
             jwt.sign({ id: user.id }, )
         ]
 
-        return token;
+        return { token };
     }
 }
 
