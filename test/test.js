@@ -1,15 +1,44 @@
-const assert = require("assert");
+const request = require("supertest");
+const server = require("../index");
+const { expect } = require('chai');
 
-describe("JWT sign && verify", function () {
-  describe("POST /token", function () {
-		it("should return { token: JwtToken }", function () {
-			// test code
+describe("API Test", () => {
+
+	describe("GET /", () => {
+		it("should return healthy", () => {
+			request(server)
+				.get("/")
+				.expect(200)
+				.end(function(err, res) {
+					if (err) {
+						return done(err)
+					} else {
+						expect(res.body).equal("healthy");
+					}
+					return done();
+				  });
 		})
 	})
 
-	describe("GET /token", function () {
-		it("should return userInfo Object : { userType, userId }", function () {
-			// test code
+	describe("POST /user/signUp", () => {
+		it("should return true", (done) => {
+
+			const userDto = { 
+				email: "test@gmail.com",
+				password: "123123",
+				name: "test"
+			}
+
+			request(server)
+				.post("/user/singUp", {
+					json: true
+				})
+				.send(userDto)
+				.expect(200)
+				.end(function(err, res) {
+					if (err) return done(err);
+					return done();
+				  });
 		})
 	})
 })
