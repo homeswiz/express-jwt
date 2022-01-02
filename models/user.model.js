@@ -10,7 +10,7 @@ module.exports = (sequelize, Sequelize) => {
           allowNull: false
         },
         name: {
-          type: Sequelize.BOOLEAN,
+          type: Sequelize.STRING,
           allowNull: false
         }
     });
