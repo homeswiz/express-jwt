@@ -18,4 +18,6 @@ jwt를 통한 인증, 인가처리를 하는 서버 로직 구현
 
 2021.01.01 - user models Sequelize 적용, SingUp & Login API 추가
 
-(예정) test 코드 추가 - POST /user/signUp, POST /user/login
+2021.01.02 - test 코드 추가 - POST /user/signUp, POST /user/login
+
+2021.01.03 - aws 인프라 환경 구축하기 (1) private / public VPC 분리하여 구축하기
