@@ -4,8 +4,14 @@ const { SERVER_PORT }  = require("./config");
 const userRouter = require("./routes/user");
 const bodyParser = require('body-parser');
 const { errorHandler } = require('./middleware/errorHandler');
+const logger = require('./util/logger');
 
 app.use(bodyParser.json());
+
+app.use((req,res,next) => {
+  logger.info(`${req.method} - ${req.originalUrl} - ${req.ip}`);
+  next();
+});
 
 app.get("/", (req,res,next) => {
   res.send("healthy");
