@@ -24,6 +24,11 @@ jwt를 통한 인증, 인가처리를 하는 서버 로직 구현
 
 2021.01.04 - winston logging 추가
 
-# Advanced
 2021.01.05 - DB connection pool & DB CPU 관리 관련 공부
  이유 : SinUp API 요청이 많아지자 deadLock 발생 및 급격한 CPU 상승 발생 가능성이 있어 공부하기
+ 참고자료
+ - 3-way-handshaking : https://www.techopedia.com/definition/10339/three-way-handshake
+ - Connection Pool을 사용해야 하는 이유 : https://devkly.com/db/db-connection-pool/
+ - (optional) MYSQL 엔진 아키텍처 : https://velog.io/@fortice/MySQL-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98
+ - (optional) TPS 지표 이해하기 : https://www.whatap.io/ko/blog/14/
+ - (aws) RDS for MYSQL 높은 사용률 해결 방법 : https://aws.amazon.com/ko/premiumsupport/knowledge-center/rds-instance-high-cpu/
