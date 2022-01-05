@@ -23,3 +23,7 @@ jwt를 통한 인증, 인가처리를 하는 서버 로직 구현
 2021.01.03 - aws 인프라 환경 구축하기 (1) private / public VPC 분리하여 구축하기, 참고 : https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/how-it-works.html
 
 2021.01.04 - winston logging 추가
+
+# Advanced
+2021.01.05 - DB connection pool & DB CPU 관리 관련 공부
+ 이유 : SinUp API 요청이 많아지자 deadLock 발생 및 급격한 CPU 상승 발생 가능성이 있어 공부하기
