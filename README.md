@@ -32,3 +32,17 @@ jwt를 통한 인증, 인가처리를 하는 서버 로직 구현
  - (optional) MYSQL 엔진 아키텍처 : https://velog.io/@fortice/MySQL-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98
  - (optional) TPS 지표 이해하기 : https://www.whatap.io/ko/blog/14/
  - (aws) RDS for MYSQL 높은 사용률 해결 방법 : https://aws.amazon.com/ko/premiumsupport/knowledge-center/rds-instance-high-cpu/
+
+2021.01.06 - 성능 테스트 방법을 준비
+ 참고자료
+ - Sequelize Connection Pool : https://sequelize.org/master/manual/connection-pool.html
+ 
+ 궁금증 
+ 1. seuqelize Connection Pool설정과 DB 자체에서 Connection Pool을 설정하면 DB 설정 Connection 개수 + Sequelize Connection 개수일까?
+ 2. multi server sequelize Connection 생성시 multi server * connection 개수가 될까?
+ 
+ 이거 테스트 해봐야겠다.
+ 
+ 
+
+(예정)  DB(MYSQL) CPU의 사용량 상승은 DB Connection 외에도 여러가지 있을 수 있기 때문에 주로 어떤 요소들이 있는지 확인
