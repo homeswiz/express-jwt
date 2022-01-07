@@ -42,7 +42,10 @@ jwt를 통한 인증, 인가처리를 하는 서버 로직 구현
  2. multi server sequelize Connection 생성시 multi server * connection 개수가 될까?
  
  이거 테스트 해봐야겠다.
- 
- 
 
 (예정)  DB(MYSQL) CPU의 사용량 상승은 DB Connection 외에도 여러가지 있을 수 있기 때문에 주로 어떤 요소들이 있는지 확인
+
+2021.01.07 - what about json update?? 
+ - 만약 json(text type)과 같은 큰 자료형태의 업데이트가 빈번하게 일어나면 어떻게 해야할까? -> 이것도 테스트 필요
+ 참고자료
+ - https://www.youtube.com/watch?v=OjppS4RWWt8
