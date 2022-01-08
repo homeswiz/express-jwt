@@ -38,17 +38,19 @@ router.post("/oauth/signUp", async (req, res, next) => {
         const Oauth = new OauthService();
 
         const option = Oauth.getOption(coperation);
-        const accessToken = await Oauth.getAccessToken(option)
-        const userInfo = await Oauth.getUserInfo(accessToken);
+        const accessToken = await Oauth.getAccessToken(coperation, option);
+        option.accessToken = accessToken;
+        
+        const userInfo = await Oauth.getUserInfo(coperation, option);
         const userDto = {
             // Todo
             email: userInfo.email,
             name: userInfo.name,
             password: userInfo.password
         }
-        const result = await new UserService().SignUp(userDto);
+        const userToken = await new UserService().SignUp(userDto);
 
-        res.json(result);
+        res.json(userToken);
     } catch (error) {
         next(error);
     }
