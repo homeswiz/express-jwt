@@ -14,7 +14,6 @@ class Kakao {
         this.clientSecret = KAKAO_CLIENT_SECRET;
         this.redirectUri = KAKAO_REDIRECT_URI;
         this.code = code;
-        this.userInfoUrl = "";
     }
 }
 
