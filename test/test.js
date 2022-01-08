@@ -4,6 +4,8 @@ const { expect } = require('chai');
 
 describe("API Test", () => {
 
+
+	// singUp and login test
 	describe("GET /", () => {
 		it("should return healthy", (done) => {
 			request(server)
@@ -35,6 +37,31 @@ describe("API Test", () => {
 					email: "test@gmail.com",
 					password: "12341234"
 				})
+				.expect(200)
+				.end(done);
+		})
+	})
+
+	// oauth signUp & login test
+	describe("POST /user/oauth/singUp", () => {
+		it("should return true(success)", (done) => {
+			request(server)
+				.post("/user/oauth/singUp")
+				.send(
+					//todo
+				)
+				.expect(200)
+				.end(done);
+		})
+	})
+
+	describe("POST /user/oauth/login", () => {
+		it("should return true(success)", (done) => {
+			request(server)
+				.post("/user/oauth/login")
+				.send(
+					//todo
+				)
 				.expect(200)
 				.end(done);
 		})
