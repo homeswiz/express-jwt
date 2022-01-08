@@ -1,4 +1,5 @@
 const express = require("express");
+const { OauthService } = require("../service/oauth");
 const { UserService } = require("../service/user");
 const router = express.Router();
 
@@ -24,8 +25,21 @@ router.post("/login", async (req, res, next) => {
 
 router.post("/oauth/signUp", async (req, res, next) => {
     try {
-        const reuslt = await new UserService().OauthSignUp();
-        res.json(reuslt);
+        const { coperation } = req.query;
+        const Oauth = new OauthService();
+
+        const option = Oauth.getOption(coperation);
+        const accessToken = await Oauth.getAccessToken(option)
+        const userInfo = await Oauth.getUserInfo(accessToken);
+        const userDto = {
+            // Todo
+            email: userInfo.email,
+            name: userInfo.name,
+            password: userInfo.password
+        }
+        const result = await new UserService().SignUp(userDto);
+
+        res.json(result);
     } catch (error) {
         next(error);
     }
