@@ -49,3 +49,7 @@ jwt를 통한 인증, 인가처리를 하는 서버 로직 구현
  - 만약 json(text type)과 같은 큰 자료형태의 업데이트가 빈번하게 일어나면 어떻게 해야할까? -> 이것도 테스트 필요
  참고자료
  - https://www.youtube.com/watch?v=OjppS4RWWt8
+
+
+## required 2021.01.08 ~ 2021.01.09
+ Oauth로도 회원가입할 수 있도록 서버 구현하기
