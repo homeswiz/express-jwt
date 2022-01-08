@@ -23,6 +23,15 @@ router.post("/login", async (req, res, next) => {
     }
 })
 
+/*
+    카카오 
+    - 로그인 이해하기 : https://developers.kakao.com/docs/latest/ko/kakaologin/common#login
+    - 로그인 설정하기 : https://developers.kakao.com/docs/latest/ko/kakaologin/prerequisite
+
+    네이버
+
+    구글
+*/
 router.post("/oauth/signUp", async (req, res, next) => {
     try {
         const { coperation } = req.query;
