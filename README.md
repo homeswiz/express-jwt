@@ -59,5 +59,5 @@ jwt를 통한 인증, 인가처리를 하는 서버 로직 구현
  - Oauth vs Oauth 2.0 ?? https://velog.io/@undefcat/OAuth-2.0-%EA%B0%84%EB%8B%A8%EC%A0%95%EB%A6%AC 
  - express exmaple (kakao) : https://redbinalgorithm.tistory.com/687
  - kakao oauth login document : https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api#req-user-info
- - naver oauth login document : 
- - google oauth login document : 
+ - naver oauth login document : (예정)
+ - google oauth login document : (예정)
