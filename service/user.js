@@ -27,13 +27,6 @@ class UserService {
 
         return { token };
     }
-
-    async OauthSignUp() {
-    }
-
-    async OauthLogin() {
-
-    }
 }
 
 
