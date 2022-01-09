@@ -34,12 +34,16 @@ router.post("/login", async (req, res, next) => {
 */
 router.post("/oauth/signUp", async (req, res, next) => {
     try {
-        const { coperation, code } = req.query;
+        const { 
+            coperation, /* KAKAO || NAVER */
+            code
+        } = req.query;
         const Oauth = new OauthService(coperation, code);
 
-        const option = Oauth.getOption(coperation);
-        const accessToken = await Oauth.getAccessToken(coperation, option);
-        option.accessToken = accessToken;
+        const option = await Oauth.getOption(coperation);
+        const { accessToken, refreshToken } = await Oauth.getAccessToken(coperation, option);
+        Oauth.setAccesToken(accessToken);
+        Oauth.setRefreshToken(refreshToken);
         
         const userInfo = await Oauth.getUserInfo(coperation, option);
         const userDto = {
