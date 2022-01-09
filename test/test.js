@@ -2,7 +2,7 @@ const request = require("supertest");
 const server = require("../index");
 const { expect } = require('chai');
 
-describe("API Test", () => {
+describe("Login Test", () => {
 
 
 	// singUp and login test
@@ -47,6 +47,22 @@ describe("API Test", () => {
 		it("should return true(success)", (done) => {
 			request(server)
 				.post("/user/oauth/singUp")
+				.send(
+					//todo
+				)
+				.expect(200)
+				.end(done);
+		})
+	})
+
+})
+
+describe("Oauth Test", () => {
+
+	describe("POST /user/oauth/singUp", () => {
+		it("should return true(success)", (done) => {
+			request(server)
+				.post("/user/oauth/login")
 				.send(
 					//todo
 				)
