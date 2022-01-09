@@ -52,7 +52,8 @@ jwt를 통한 인증, 인가처리를 하는 서버 로직 구현
 
 
 ## required 2021.01.08 ~ 2021.01.09
- Oauth로도 회원가입할 수 있도록 서버 구현하기
+ (2021.01.08)Oauth로도 회원가입할 수 있도록 서버 구현하기
+ (2021.01.09)Oauth 테스트까지 완료하기
  
  (참고)
  - Oauth란? https://tecoble.techcourse.co.kr/post/2021-07-10-understanding-oauth/
