@@ -62,5 +62,5 @@ jwt를 통한 인증, 인가처리를 하는 서버 로직 구현
    - https://redbinalgorithm.tistory.com/687
    - https://redbinalgorithm.tistory.com/687
  - kakao oauth login document : https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api#req-user-info
- - naver oauth login document : (예정)
+ - naver oauth login document : https://developers.naver.com/docs/login/overview/overview.md
  - google oauth login document : (예정)
