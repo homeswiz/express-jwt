@@ -1,6 +1,5 @@
 const request = require("supertest");
 const server = require("../index");
-const { expect } = require('chai');
 
 describe("Login Test", () => {
 
@@ -41,46 +40,26 @@ describe("Login Test", () => {
 				.end(done);
 		})
 	})
-
-	// oauth signUp & login test
-	describe("POST /user/oauth/singUp", () => {
-		it("should return true(success)", (done) => {
-			request(server)
-				.post("/user/oauth/singUp")
-				.send(
-					//todo
-				)
-				.expect(200)
-				.end(done);
-		})
-	})
-
 })
 
 describe("Oauth Test", () => {
 
-	describe("POST /user/oauth/singUp", () => {
-		it("should return true(success)", (done) => {
-			request(server)
-				.post("/user/oauth/login")
-				.send(
-					//todo
-				)
-				.expect(200)
-				.end(done);
-		})
-	})
+	const coperations = [ "KAKAO" ]
+	const authorizationCodeObj = {
+		KAKAO : null
+	}
 
-	describe("POST /user/oauth/login", () => {
-		it("should return true(success)", (done) => {
-			request(server)
-				.post("/user/oauth/login")
-				.send(
-					//todo
-				)
-				.expect(200)
-				.end(done);
+	for (let i = 0; i < coperations.length; i++) {
+		const coperation = coperations[i];
+
+		describe(`POST /user/oauth/singUp, coperation = ${coperation}`, () => {
+			it("should return true(success)", (done) => {
+				request(server)
+					.post(`/user/oauth/singUp?coperation=${coperation}&code=${authorizationCodeObj[coperation]}`)
+					.expect(200)
+					.end(done);
+			})
 		})
-	})
+	}
 
 })
