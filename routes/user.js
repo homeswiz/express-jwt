@@ -34,8 +34,8 @@ router.post("/login", async (req, res, next) => {
 */
 router.post("/oauth/signUp", async (req, res, next) => {
     try {
-        const { coperation } = req.query;
-        const Oauth = new OauthService();
+        const { coperation, code } = req.query;
+        const Oauth = new OauthService(coperation, code);
 
         const option = Oauth.getOption(coperation);
         const accessToken = await Oauth.getAccessToken(coperation, option);
