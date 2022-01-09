@@ -6,8 +6,8 @@ const { Kakao, Naver, Google } = require("../util/oauth");
 
 class OauthService {
 
-    constructor(KAKAO_CODE) {
-        this.KAKAO_CODE = KAKAO_CODE;
+    constructor(COPERATION, CODE) {
+        this.KAKAO_CODE = COPERATION === "KAKAO" ? CODE : null;
     }
 
     async getOption(coperation) {
