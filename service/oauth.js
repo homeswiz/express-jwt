@@ -7,7 +7,13 @@ const { Kakao, Naver, Google } = require("../util/oauth");
 class OauthService {
 
     constructor(COPERATION, CODE) {
-        this.KAKAO_CODE = COPERATION === "KAKAO" ? CODE : null;
+        /*
+            KAKAO_CODE,
+            NAVER_CODE
+        */
+        this[`${COPERATION}_CODE`] = CODE;
+        this.accessToken = null;
+        this.refreshToken = null;
     }
 
     async getOption(coperation) {
@@ -46,7 +52,15 @@ class OauthService {
                     }  
                 })
                 break;
-        
+            case "NAVER":
+                /*
+                    참고 : https://developers.naver.com/docs/login/devguide/devguide.md#:~:text=%EB%B0%98%ED%99%98%EB%B0%9B%EB%8A%94%20%EC%97%90%EB%9F%AC%20%EB%A9%94%EC%8B%9C%EC%A7%80-,3.4.4%20%EC%A0%91%EA%B7%BC%20%ED%86%A0%ED%81%B0%20%EB%B0%9C%EA%B8%89%20%EC%9A%94%EC%B2%AD,-Callback%EC%9C%BC%EB%A1%9C%20%EC%A0%84%EB%8B%AC%EB%B0%9B%EC%9D%80
+                */
+                accessToken = await axios({
+                    method: "POST",
+                    url: `${option.accessTokenGenerateUrl}?grant_type=authorization_code&client_id=${option.clientId}&client_secret=${option.clientSecret}&code=${option.code}&state=NAVER_AUTHORIZATION`,
+                })
+                break;
             default:
                 break;
         }
@@ -79,6 +93,14 @@ class OauthService {
         }
 
         return userInfo;
+    }
+
+    async setAccesToken(accessToken) {
+        this.accessToken = accessToken
+    }
+
+    async setRefreshToken(refreshToken) {
+        this.refreshToken = refreshToken
     }
 }
 
