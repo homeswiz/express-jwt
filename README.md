@@ -64,3 +64,14 @@ jwt를 통한 인증, 인가처리를 하는 서버 로직 구현
  - kakao oauth login document : https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api#req-user-info
  - naver oauth login document : https://developers.naver.com/docs/login/overview/overview.md
  - google oauth login document : (예정)
+
+## required 게시판, 댓글 등 시간대비 reqeuest 조회 요쳥이 많을시 cusrusr pagination으로 변경
+ -  방법 : respone { id: (max id값)부터 limit까지 조회하도록 변경 }
+ -  reason : offset, limit은 sql explai 문제 발생 : https://use-the-index-luke.com/sql/partial-results/fetch-next-page
+ -  solution (1) : parimary key id 기반으로 cursur pagenation으로 해결
+ -  이점 
+   -  record update와 상괁없이 해당 record기준으로 생성기준 순서대로 조히할 수 있다.
+   -  Primary Key (id)기반으로 하기 때문에 index의 해결을 가질 수 있다. 단, 이 경우는 index에 의존하기 떄문에 대체 가능한 경우에는 고려해볼 수 있을만 하다. (예외, DB에서 forienKey 타입의 stinrg or index는 성능의 영향을 미칠 수 있다. 그렇기 때문에 foreign key는 어떻게 설정할 것인지 팀 내 혹은 개인의 사고가 필요한 경우이다.
+      (참고)
+      - https://dzone.com/articles/the-secrets-of-indexes-amp-foreign-keys
+      - (추가) : index key의 type은 db performance에 영향을 줄까?? : (linke : undecided)
