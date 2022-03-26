@@ -1,6 +1,7 @@
 import express from "express";
 import { RouteConfig } from '../config/routesConfig';
 import userController from "../controllers/user.controller";
+import auth from "../middlewares/auth.middleware";
 
 export class UserRoute extends RouteConfig {
 
@@ -18,6 +19,7 @@ export class UserRoute extends RouteConfig {
         this.app
             .route("/accessToken")
             .post(
+                auth.validateToken,
                 userController.generateAccessToken
             );
         

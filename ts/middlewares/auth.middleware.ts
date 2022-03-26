@@ -6,7 +6,7 @@ class Auth {
         return this.instance || (this.instance = new this());
     }
 
-    validate(req: express.Request) {
+    validateToken(req: express.Request) {
         // jwt decode
     }
 }
