@@ -1,15 +1,9 @@
-
-
+import UserDao from '../db/dao/user.dao';
 class UserService {
     async login(email: string, password: string) {
-        const user = await UsersDao.get(email, password);
+        const user = await UserDao.login({ email, password });
         return user;
     }
-
-    async generateAccessToken(accessToken, refreshToken) {
-        return UsersDao.addUser(resource);
-    }
-
 }
 
 export default new UserService();
